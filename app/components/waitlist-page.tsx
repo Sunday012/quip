@@ -74,17 +74,45 @@ export default function Component() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = async (e: React.FormEvent) => {
+// Replace your existing handleSubmit function with this:
+const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!formData.email || !formData.fullName || !formData.userRole) return
     if (formData.userRole === "provider" && !formData.serviceCategory) return
-
+  
     setIsLoading(true)
-    await new Promise((resolve) => setTimeout(resolve, 800))
-    setIsSubmitted(true)
-    setShowModal(false)
-    setIsLoading(false)
-    setFormData({ fullName: "", email: "", userRole: "", serviceCategory: "" })
+    
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          userRole: formData.userRole,
+          serviceCategory: formData.serviceCategory
+        })
+      });
+  
+      const result = await response.json();
+      
+      if (result.success) {
+        setIsSubmitted(true)
+        setShowModal(false)
+        setFormData({ fullName: "", email: "", userRole: "", serviceCategory: "" })
+      } else {
+        // Handle error - you might want to show an error message to the user
+        console.error('Failed to join waitlist:', result.error);
+        alert('Failed to join waitlist. Please try again.');
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      alert('Network error. Please check your connection and try again.');
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleSurvey = () => {
