@@ -17,7 +17,7 @@ export default function Component() {
   const [scrollY, setScrollY] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
   const featuresRef = useRef<HTMLDivElement>(null)
-  const whyQuipRef = useRef<HTMLElement>(null)
+  const whyKoalaRef = useRef<HTMLElement>(null)
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -66,7 +66,7 @@ export default function Component() {
       })
     }, observerOptions)
 
-    const elements = [featuresRef.current, whyQuipRef.current]
+    const elements = [featuresRef.current, whyKoalaRef.current]
     elements.forEach((el) => {
       if (el) observer.observe(el)
     })
@@ -117,7 +117,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   const handleSurvey = () => {
     // Open survey in new tab
-    window.open("https://forms.gle/survey", "_blank")
+    window.open("https://forms.gle/AepYKp6ZBUqvphDGA", "_blank")
   }
 
   const parallaxStyle = {
@@ -163,10 +163,10 @@ const handleSubmit = async (e: React.FormEvent) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <div className="flex items-center space-x-2 group">
-                <Image src="/logo.png" alt="Quip logo" width={32} height={32} />
-                <span className="text-xl font-semibold text-gray-900 transition-colors duration-200 group-hover:text-green-700">
-                  quip
-                </span>
+                <Image src="/images/logo.png" alt="Koala logo" width={100} height={100} />
+                {/* <span className="text-xl font-semibold text-gray-900 transition-colors duration-200 group-hover:text-green-700">
+                  koala
+                </span> */}
               </div>
             </div>
             <Button
@@ -227,7 +227,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               className={`text-xl text-gray-600 mb-8 max-w-2xl mx-auto transition-all duration-500 ease-out ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
               style={{ transitionDelay: "400ms" }}
             >
-              Quip connects you with trusted local service providers and makes booking awesome
+              Koala connects you with trusted local service providers and makes booking awesome
             </p>
 
             {/* Waitlist and Survey Buttons */}
@@ -255,7 +255,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   className={`text-sm text-gray-500 mt-4 text-center transition-all duration-500 ease-out ${isLoaded ? "opacity-100" : "opacity-0"}`}
                   style={{ transitionDelay: "600ms" }}
                 >
-                  Quip is launching soon. We'll notify you when it's ready for your area.
+                  Koala is launching soon. We'll notify you when it's ready for your area.
                 </p>
               </div>
             ) : (
@@ -264,7 +264,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   <CheckCircle className="w-12 h-12 text-green-700 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-green-800 mb-2">You're on the waitlist!</h3>
                   <p className="text-green-700 mb-4">
-                    Thank you for joining! We'll notify you as soon as Quip launches in your area.
+                    Thank you for joining! We'll notify you as soon as Koala launches in your area.
                   </p>
                   <p className="text-sm text-green-600">
                     Keep an eye on your inbox for updates and early access opportunities.
@@ -347,13 +347,13 @@ const handleSubmit = async (e: React.FormEvent) => {
         </div>
       </section>
 
-      {/* Why QUIP Section */}
+      {/* Why KOALA Section */}
       <section
-        ref={whyQuipRef}
+        ref={whyKoalaRef}
         className="py-20 bg-white relative z-10 opacity-0 translate-y-8 transition-all duration-800"
       >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-16">Why QUIP?</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-16">Why KOALA?</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
@@ -464,7 +464,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  Quip is like a personal assistant, but it also
+                  Koala is like a personal assistant, but it also
                   <span className="text-green-700"> connects you with verified providers</span>
                 </h3>
                 <Card className="bg-gray-50 border-0 hover:bg-green-50 transition-colors duration-300">
@@ -488,7 +488,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  When the service ends, Quip
+                  When the service ends, Koala
                   <span className="text-green-700"> enhances</span> the experience you've written
                 </h3>
                 <Card className="bg-gray-50 border-0 hover:bg-green-50 transition-colors duration-300">
@@ -535,7 +535,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 <div className="w-12 h-12 bg-gray-200 rounded-full hover:bg-green-100 transition-colors duration-200"></div>
                 <div>
                   <p className="font-semibold text-gray-900">David Sunny</p>
-                  <p className="text-sm text-gray-500">Founder, Quip</p>
+                  <p className="text-sm text-gray-500">Founder, Koala</p>
                 </div>
               </div>
             </div>
@@ -552,7 +552,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             no service interruptions
           </h2>
           <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
-            Quip connects with your preferred platforms seamlessly, with no service disruptions or complicated
+            Koala connects with your preferred platforms seamlessly, with no service disruptions or complicated
             integrations
           </p>
 
@@ -576,7 +576,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               <br />
               reliable local services?
             </h2>
-            <p className="text-gray-600 mb-8">Try Quip for a few service bookings today. It's free to get started</p>
+            <p className="text-gray-600 mb-8">Try Koala for a few service bookings today. It's free to get started</p>
             <div className="flex flex-col gap-3">
               <Button
                 className="bg-green-700 hover:bg-green-800 text-white px-8 py-3 text-lg font-semibold rounded-md w-full transition-all duration-200 hover:scale-105"
@@ -593,7 +593,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               </Button>
             </div>
             <p className="text-sm text-gray-500 mt-4">
-              Quip is launching soon. We can let you know when it's ready for your area.
+              Koala is launching soon. We can let you know when it's ready for your area.
             </p>
           </div>
         </div>
@@ -604,7 +604,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center text-sm text-gray-500">
             <div className="flex items-center space-x-4">
-              <span>© Quip Inc. 2025</span>
+              <span>© Koala Inc. 2025</span>
             </div>
             <div className="flex items-center space-x-6">
               {["Contact us", "Privacy & Security", "Contact", "LinkedIn"].map((link) => (
@@ -697,15 +697,20 @@ const handleSubmit = async (e: React.FormEvent) => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors duration-150"
                     >
                       <option value="">Select your service category</option>
-                      <option value="beauty">Beauty & Personal Care (Barber, Salon, etc.)</option>
-                      <option value="cleaning">Cleaning Services</option>
-                      <option value="technical">Technical Services (Electrician, Plumber, etc.)</option>
-                      <option value="tutoring">Education & Tutoring</option>
-                      <option value="photography">Photography & Videography</option>
-                      <option value="events">Event Planning & Catering</option>
-                      <option value="fitness">Fitness & Wellness</option>
-                      <option value="automotive">Automotive Services</option>
-                      <option value="other">Other</option>
+                      <option value="medical">Medical & health</option>
+                      <option value="nonprofit">Nonprofit organization</option>
+                      <option value="restaurant">Restaurant</option>
+                      <option value="shopping">Shopping & retail</option>
+                      <option value="other-business">Other Business</option>
+                      <option value="automotive">Automotive Service</option>
+                      <option value="apparel">Apparel & clothing</option>
+                      <option value="arts">Arts & entertainment</option>
+                      <option value="beauty">Beauty, cosmetic & personal care</option>
+                      <option value="education">Education</option>
+                      <option value="event-planner">Event Planner</option>
+                      <option value="finance">Finance</option>
+                      <option value="grocery">Grocery Store</option>
+                      <option value="hotel">Hotel</option>
                     </select>
                   </div>
                 )}
